@@ -49,3 +49,50 @@ Should be:
 String line = value.toString().replaceAll("[^a-zA-Z\\s]", " ");
 ```
 But it doesn't speed up even if it contains less key than.
+
+## Bonus: Word Length Count
+```
+$ sort -n -k2 result/sherlock_unique_word_length
+> 18	1
+21	1
+17	2
+16	8
+15	29
+1	38
+14	84
+2	130
+13	214
+12	430
+3	450
+11	794
+10	1357
+4	1375
+5	1998
+9	2004
+8	2574
+6	2725
+7	2910
+```
+Compare to:
+```
+$ sort -n -k2 ../Lab1/result/local_length_part-r-00000
+> 18	1
+17	2
+21	11
+16	21
+15	91
+14	315
+13	876
+12	1943
+11	3835
+10	8583
+9	15265
+8	20169
+1	31169
+7	34120
+6	43497
+5	58079
+2	101725
+4	104132
+3	125791
+```
