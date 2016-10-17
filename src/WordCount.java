@@ -13,13 +13,14 @@ public class WordCount {
   public static void runJob(String[] input, String output) throws Exception {
 
     Configuration conf = new Configuration();
-    
+
     Job job = new Job(conf);
     job.setJarByClass(WordCount.class);
     job.setMapperClass(TokenizerMapper.class);
     job.setReducerClass(IntSumReducer.class);
     job.setMapOutputKeyClass(Text.class);
     job.setMapOutputValueClass(IntWritable.class);
+	job.setNumReduceTasks(3);
     Path outputPath = new Path(output);
     FileInputFormat.setInputPaths(job, StringUtils.join(input, ","));
     FileOutputFormat.setOutputPath(job, outputPath);
