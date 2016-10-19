@@ -6,3 +6,4 @@ classes/
 dist/
 logs/
 result/
+*.md
